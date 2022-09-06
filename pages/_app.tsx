@@ -17,10 +17,11 @@ const queryClient = new QueryClient({
 const queryClientProviderProps = {client: queryClient}
 
 function MyApp({ Component, pageProps }: AppProps) {
+  console.log(process.env)
   return (
     <MedusaProvider
       queryClientProviderProps={queryClientProviderProps}
-      baseUrl={process.env.MEDUSA_SERVER || ''}
+      baseUrl={process.env.MEDUSA_SERVER || 'http://localhost:3000'}
     >
       <div className="p-10">
         <Component {...pageProps} />
