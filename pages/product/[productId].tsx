@@ -9,7 +9,7 @@ const ProductPage: NextPage = () => {
 
   const productId = router.query.productId as string | undefined
 
-  const { product, isLoading } = useProduct(productId || '')
+  const {product} = useProduct(productId || '')
 
   return (
     <>
