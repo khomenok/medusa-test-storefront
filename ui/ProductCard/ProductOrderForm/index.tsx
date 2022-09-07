@@ -3,6 +3,7 @@ import { CURRENCY_SIGNS } from '../../../utils/formatPrice'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import clsx from 'classnames'
 import ProductVariantDetails from '../ProductVariantDetails'
+import PersonHeightSample from '../PersonHeightSample'
 
 type ProductOrderFormProps = {
   product: Product
@@ -71,7 +72,12 @@ const ProductOrderForm = ({ product, onAddToCart }: ProductOrderFormProps) => {
         Add to cart{' '}
         {chosenVariant && `for ${formatVariantPrice(chosenVariant)}`}
       </button>
-      {chosenVariant && <ProductVariantDetails variant={chosenVariant} />}
+      <div className="flex gap-16 mt-4">
+        {chosenVariant && <ProductVariantDetails variant={chosenVariant} />}
+        {!!chosenVariant?.width && !!chosenVariant?.height && (
+          <PersonHeightSample variant={chosenVariant} />
+        )}
+      </div>
     </form>
   )
 }

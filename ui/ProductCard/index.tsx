@@ -25,8 +25,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <section className="flex flex-col lg:flex-row gap-10">
       {product.thumbnail && (
-        <div className="flex-1 relative">
-          <div className="pb-[100%]">
+        <div className="flex-1">
+          <div className="relative pb-[100%]">
             <Image
               alt="Main product image"
               src={product.thumbnail}

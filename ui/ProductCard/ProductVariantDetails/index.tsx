@@ -12,9 +12,9 @@ type ProductVariantDetailsProps = {
 
 const ProductVariantDetails = ({ variant }: ProductVariantDetailsProps) => {
   const detailKeys = useMemo(
-    /* @ts-ignore todo: */
     () =>
       DETAIL_KEYS.filter(
+        // @ts-ignore todo:
         (key) => variant.hasOwnProperty(key.key) && variant[key.key],
       ),
     [variant],
@@ -25,7 +25,7 @@ const ProductVariantDetails = ({ variant }: ProductVariantDetailsProps) => {
   }
 
   return (
-    <div className="mt-4 text-[12px] leading-[20px] text-black">
+    <div className="text-[12px] leading-[20px] text-black">
       <h3 className="font-semibold mb-2">Product details</h3>
       <ul>
         {detailKeys.map(
