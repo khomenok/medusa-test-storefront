@@ -42,7 +42,10 @@ const ProductOrderForm = ({
     <form className="flex flex-col gap-4" onSubmit={handleSubmitForm}>
       <select
         name="variants"
-        className="px-4 pt-[11px] pb-[10px] border border-grey-20 text-grey-90 cursor-pointer"
+        className={clsx(
+          "px-4 pt-[11px] pb-[10px] border border-grey-20 text-grey-90 cursor-pointer",
+          "hover:border-grey-70",
+        )}
         value={variantId}
         onChange={handleVariantChange}
       >
@@ -56,8 +59,8 @@ const ProductOrderForm = ({
       <button
         type="submit"
         className={clsx(
-          "bg-grey-90 text-[white] text-[12px] text-center leading-[2]",
-          "p-2 uppercase cursor-pointer",
+          "bg-grey-90 text-[white] text-[12px] text-center leading-[2] p-2 uppercase cursor-pointer",
+          "hover:bg-grey-70"
         )}
       >
         Add to cart {chosenVariant && `for ${formatVariantPrice(chosenVariant)}`}

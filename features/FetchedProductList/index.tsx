@@ -12,7 +12,7 @@ const FetchedProductList = (props: FetchedProductListType) => {
     collection_id: props.collectionId ? [props.collectionId] : undefined
   }), [props.collectionId])
 
-  const {products, isLoading} = useProducts(queryProps)
+  const {products} = useProducts(queryProps)
 
   return (
     <ProductList list={products} />

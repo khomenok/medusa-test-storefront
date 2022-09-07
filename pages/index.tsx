@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import {useProducts} from "medusa-react";
 import FetchedCollectionList from "../features/FetchedCollectionList";
 import {useRouter} from "next/router";
 import {useCallback} from "react";
@@ -16,8 +15,6 @@ const Home: NextPage = () => {
       query: {...router.query, collectionId},
     })
   }, [router.push, router.pathname, router.query])
-
-  const { products, isLoading } = useProducts()
 
   return (
     <>

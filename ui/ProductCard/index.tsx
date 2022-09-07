@@ -16,7 +16,7 @@ const ProductCard = ({product}: ProductCardProps) => {
   )
 
   return (
-    <section className="flex gap-10">
+    <section className="flex flex-col lg:flex-row gap-10">
       {product.thumbnail && (
         <div className="flex-1 relative">
           <div className="pb-[100%]">
@@ -24,7 +24,7 @@ const ProductCard = ({product}: ProductCardProps) => {
           </div>
         </div>
       )}
-      <div className="flex flex-col justify-center flex-1 pr-16">
+      <div className="flex flex-col justify-center flex-1 p-4 lg:p-0 lg:pr-16">
         <h1 className="text-[30px] text-grey-90 font-semibold leading-[1.2] mb-4">{product.title}</h1>
         <h2 className="text-[14px] text-grey-90">{formatPrice(priceDomain, currency)}</h2>
         <div className="text-[12px] text-grey-70 mt-[31px] mb-[31px] whitespace-pre-line">

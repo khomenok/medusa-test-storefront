@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {useMemo} from "react";
 import {getPriceDomain, getCurrency, formatPrice} from "../../utils/formatPrice";
+import clsx from "classnames";
 
 type ProductListCardProps = {product: Product}
 
@@ -12,10 +13,14 @@ const ProductListCard = (props: ProductListCardProps) => {
 
   return (
     <Link href={`/product/${props.product.id}`} passHref={false}>
-      <li className="rounded bg-midnight-grey cursor-pointer">
+      <li className="rounded bg-midnight-grey cursor-pointer group">
         {props.product.thumbnail && (
           <div className="p-4">
-            <div className="relative pb-[100%]">
+            <div
+              className={clsx(
+                "relative pb-[100%]",
+                "transition duration-100 ease-in group-hover:scale-[1.05] lg:group-hover:scale-[1.15]"
+              )}>
               <Image alt="product thumbnail" src={props.product.thumbnail} layout="fill" />
             </div>
           </div>

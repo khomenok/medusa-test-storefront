@@ -5,14 +5,14 @@ type BaseLayoutProps = {children: React.ReactNode}
 
 const BaseLayout = ({children}: BaseLayoutProps) => {
   return (
-    <main>
+    <main className="min-w-[320px]">
       <div className="flex justify-center align-center p-1">
         <Link href="/" passHref={false}>
           <h1 className="flex justify-center items-center p-2 cursor-pointer">
             <div className="w-[20px] h-[20px] relative mr-[5px]">
               <Image alt="website logo" src="/logo.webp" layout="fill" />
             </div>
-            <div className="text-xl font-bold text-midnight">scarves without scars</div>
+            <div className="text-xl font-bold text-midnight hover:underline">scarves without scars</div>
           </h1>
         </Link>
       </div>

@@ -28,7 +28,7 @@ const ProductVariantDetails = ({
       <h3 className="font-semibold mb-2">Product details</h3>
       <ul>
         {detailKeys.map(({key, title}) => key in variant && (
-          <li className="mb-1">
+          <li className="mb-1" key={key}>
             <div className="font-semibold">
               {title}
             </div>

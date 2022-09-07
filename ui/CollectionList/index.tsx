@@ -18,8 +18,9 @@ const CollectionListItem = (props: CollectionListItemProps) => {
   return (
     <li
       className={clsx(
-        "py-1 px-3 rounded-lg border-[black-80] border-2 border cursor-pointer",
+        "py-1 px-3 rounded-lg border-[black-80] border-2 border cursor-pointer whitespace-nowrap",
         props.isSelected && "border-orange-dark",
+        "hover:border-grey-20"
       )}
       onClick={handleClick}
     >
@@ -36,7 +37,7 @@ type CollectionListProps = {
 
 const CollectionList = (props: CollectionListProps) => {
   return (
-    <ul className={clsx("flex items-center justify-center gap-2", !props.list?.length && "opacity-0")}>
+    <ul className={clsx("flex flex-wrap items-center justify-center gap-2", !props.list?.length && "opacity-0")}>
       <CollectionListItem
         itemTitle="All"
         onSelectId={props.onSelectId}

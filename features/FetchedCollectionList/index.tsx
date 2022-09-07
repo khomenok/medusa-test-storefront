@@ -7,7 +7,7 @@ type FetchedCollectionListType = {
 }
 
 const FetchedCollectionList = (props: FetchedCollectionListType) => {
-  const {collections, isLoading} = useCollections()
+  const {collections} = useCollections()
   return (
     <div className="mb-4">
       <CollectionList
