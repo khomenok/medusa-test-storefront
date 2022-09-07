@@ -1,8 +1,8 @@
 import {Product} from "@medusajs/medusa";
 
-type ProductCardType = {product: Product}
+type ProductCardProps = {product: Product}
 
-const ProductCard = ({product}: ProductCardType) => {
+const ProductCard = ({product}: ProductCardProps) => {
   return (
     <div>
       {product.title}

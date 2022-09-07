@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import {MedusaProvider} from "medusa-react";
 import {QueryClient} from "react-query";
+import BaseLayout from "../ui/BaseLayout";
 
 // Your react-query's query client config
 const queryClient = new QueryClient({
@@ -17,15 +18,14 @@ const queryClient = new QueryClient({
 const queryClientProviderProps = {client: queryClient}
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log(process.env)
   return (
     <MedusaProvider
       queryClientProviderProps={queryClientProviderProps}
       baseUrl={process.env.MEDUSA_SERVER || 'http://localhost:3000'}
     >
-      <div className="p-10">
+      <BaseLayout>
         <Component {...pageProps} />
-      </div>
+      </BaseLayout>
     </MedusaProvider>
   )
 }
