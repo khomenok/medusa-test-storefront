@@ -1,5 +1,5 @@
-import {useCollections} from "medusa-react";
-import CollectionList from "../../ui/CollectionList";
+import { useCollections } from 'medusa-react'
+import CollectionList from '../../ui/CollectionList'
 
 type FetchedCollectionListType = {
   selectedId?: string
@@ -7,7 +7,7 @@ type FetchedCollectionListType = {
 }
 
 const FetchedCollectionList = (props: FetchedCollectionListType) => {
-  const {collections} = useCollections()
+  const { collections } = useCollections()
   return (
     <div className="mb-4">
       <CollectionList

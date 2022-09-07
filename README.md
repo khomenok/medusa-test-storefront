@@ -1,5 +1,6 @@
 # Scarf Shop
-### *Test assignment for MedusaJS interview*
+
+### _Test assignment for MedusaJS interview_
 
 First, run the development server:
 
@@ -11,4 +12,3 @@ pnpm run dev
 Open [http://localhost:2022](http://localhost:2022) with your browser to see the result.
 
 ## Learn More
-

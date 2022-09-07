@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import Link from "next/link";
+import Link from 'next/link'
 
-type BaseLayoutProps = {children: React.ReactNode}
+type BaseLayoutProps = { children: React.ReactNode }
 
-const BaseLayout = ({children}: BaseLayoutProps) => {
+const BaseLayout = ({ children }: BaseLayoutProps) => {
   return (
     <main className="min-w-[320px]">
       <div className="flex justify-center align-center p-1">
@@ -12,13 +12,13 @@ const BaseLayout = ({children}: BaseLayoutProps) => {
             <div className="w-[20px] h-[20px] relative mr-[5px]">
               <Image alt="website logo" src="/logo.webp" layout="fill" />
             </div>
-            <div className="text-xl font-bold text-midnight hover:underline">scarves without scars</div>
+            <div className="text-xl font-bold text-midnight hover:underline">
+              scarves without scars
+            </div>
           </h1>
         </Link>
       </div>
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </main>
   )
 }
