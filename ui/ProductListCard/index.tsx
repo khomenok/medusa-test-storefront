@@ -2,31 +2,17 @@ import {Product} from "@medusajs/medusa";
 import Link from "next/link";
 import Image from "next/image";
 import {useMemo} from "react";
+import {getPriceDomain, getCurrency, formatPrice} from "../../utils/formatPrice";
 
 type ProductListCardProps = {product: Product}
 
-const CURRENCY_SIGNS: Record<string, string | undefined> = {
-  'eur': 'Є'
-}
-
 const ProductListCard = (props: ProductListCardProps) => {
-  const prices = useMemo(() =>
-    props.product.variants.map(variant => variant.prices.map(price => price.amount / 100)).flat(),
-    [props.product]
-  )
-  console.log(prices)
-  const priceDomain = useMemo(() => {
-    const min = Math.min(...prices)
-    const max = Math.max(...prices)
-    return [min, max]
-  }, [prices])
-
-  // todo: for now, frontend supports only one currency
-  const currency = props.product.variants[0].prices[0].currency_code
+  const priceDomain = useMemo(() => getPriceDomain(props.product), [props.product])
+  const currency = useMemo(() => getCurrency(props.product), [props.product])
 
   return (
     <Link href={`/product/${props.product.id}`} passHref={false}>
-      <div className="rounded bg-midnight-gray cursor-pointer">
+      <li className="rounded bg-midnight-grey cursor-pointer">
         {props.product.thumbnail && (
           <div className="p-4">
             <div className="relative pb-[100%]">
@@ -39,10 +25,10 @@ const ProductListCard = (props: ProductListCardProps) => {
             {props.product.title}
           </div>
           <div className="whitespace-nowrap">
-            {CURRENCY_SIGNS[currency] || currency.toUpperCase()} {priceDomain[0] === priceDomain[1] ? priceDomain[0] : `${priceDomain[0]} - ${priceDomain[1]}`}
+            {formatPrice(priceDomain, currency)}
           </div>
         </div>
-      </div>
+      </li>
     </Link>
   )
 }

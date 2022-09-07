@@ -16,7 +16,7 @@ const CollectionListItem = (props: CollectionListItemProps) => {
   )
 
   return (
-    <div
+    <li
       className={clsx(
         "py-1 px-3 rounded-lg border-[black-80] border-2 border cursor-pointer",
         props.isSelected && "border-orange-dark",
@@ -24,7 +24,7 @@ const CollectionListItem = (props: CollectionListItemProps) => {
       onClick={handleClick}
     >
       {props.itemTitle.toLowerCase()}
-    </div>
+    </li>
   )
 }
 
@@ -36,7 +36,7 @@ type CollectionListProps = {
 
 const CollectionList = (props: CollectionListProps) => {
   return (
-    <div className={clsx("flex items-center justify-center gap-2", !props.list?.length && "opacity-0")}>
+    <ul className={clsx("flex items-center justify-center gap-2", !props.list?.length && "opacity-0")}>
       <CollectionListItem
         itemTitle="All"
         onSelectId={props.onSelectId}
@@ -51,7 +51,7 @@ const CollectionList = (props: CollectionListProps) => {
           isSelected={props.selectedId === collection.id}
         />
       ))}
-    </div>
+    </ul>
   )
 }
 

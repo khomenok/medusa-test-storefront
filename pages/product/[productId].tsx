@@ -12,20 +12,17 @@ const ProductPage: NextPage = () => {
   const { product, isLoading } = useProduct(productId || '')
 
   return (
-    <div>
+    <>
       <Head>
-        <title>Scarves Without Scars</title>
+        <title>{product ? `${product.title} - Scarves Without Scars` : 'Scarves Without Scars'}</title>
         <meta name="description" content="All type of silk scarves" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="text-3xl font-bold">
-          <a href="/">Scarves Without Scars</a>
-          {product ? <ProductCard product={product} /> : null}
-        </h1>
-      </main>
-    </div>
+      <div className="mt-2">
+        {product ? <ProductCard product={product} /> : null}
+      </div>
+    </>
   )
 }
 

@@ -7,14 +7,14 @@ type ProductListProps = {
 
 const ProductList = (props: ProductListProps) => {
   return (
-    <div className="grid grid-cols-4 gap-4 py-3 px-6">
+    <ul className="grid grid-cols-4 gap-4 py-3 px-6">
       {props.list?.map(product => (
         <ProductListCard
           key={product.id}
           product={product}
         />
       ))}
-    </div>
+    </ul>
   )
 }
 
