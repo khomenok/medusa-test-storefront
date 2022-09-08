@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <MedusaProvider
       queryClientProviderProps={queryClientProviderProps}
-      baseUrl={process.env.MEDUSA_SERVER || 'http://localhost:3000'}
+      baseUrl={'/'}
     >
       <BaseLayout>
         <Component {...pageProps} />

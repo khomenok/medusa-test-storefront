@@ -6,7 +6,7 @@ First, run the development server:
 
 ```bash
 pnpm i
-pnpm run dev
+MEDUSA_SERVER=82.146.57.4 pnpm run dev # or any other MedusaJS server
 ```
 
 Open [http://localhost:2022](http://localhost:2022) with your browser to see the result.
